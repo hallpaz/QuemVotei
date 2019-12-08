@@ -12,11 +12,16 @@ class ProfileActivity : AppCompatActivity() {
 
         val nome = intent.getStringExtra(NOME_EXTRA)
         val cidade = intent.getStringExtra(CIDADE_EXTRA)
+        val idade = intent.getStringExtra(IDADE_EXTRA)
 
         nome_textview.text = nome
         cidade_textview.text = cidade
+        idade_textview.text = idade
 
-        // pode atribuir diretamente
-        idade_textview.text = intent.getStringExtra(IDADE_EXTRA)
+        status_textview.text = when(deveVotar(idade.toInt())){
+            FACULTATIVO -> "Seu voto será FACULTATIVO na próxima eleição"
+            OBRIGATORIO -> "Seu voto será OBRIGATÓRIO na próxima eleição"
+            else -> "Menor de 16? Como veio parar aqui?"
+        }
     }
 }
