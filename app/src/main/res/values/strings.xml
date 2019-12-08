@@ -3,4 +3,16 @@
     <string name="pede_idade">Olá! Conte-nos sua idade para personalizarmos sua experiência ;)</string>
     <string name="hint_idade">Anos completos</string>
     <string name="avancar_string">Avançar</string>
+    <string name="cadastrar_string">Cadastrar</string>
+    <string name="more_info_string">Só mais umas informaçõezinhas...</string>
+    <string name="name_string">Nome</string>
+    <string name="voting_city_string">Domicílio eleitoral</string>
+    <string name="vote_status_profile_string">Deve votar na próxima eleição</string>
+    <string name="city_placeholder">São Gabriel da Cachoeira</string>
+    <string name="name_placeholder">Fulano da Silva</string>
+    <string name="age_placeholder">0 anos</string>
+    <string name="age_string">idade</string>
+    <string name="city_string">cidade</string>
+    <string name="avatar_string">avatar</string>
+    <string name="disque_eleitor_string">Disque eleitor</string>
 </resources>

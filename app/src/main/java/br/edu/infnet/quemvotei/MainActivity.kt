@@ -1,5 +1,6 @@
 package br.edu.infnet.quemvotei
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -30,12 +31,11 @@ class MainActivity : AppCompatActivity() {
                     "Você NÃO PODE usar este APP ainda!",
                     Toast.LENGTH_LONG).show()
             } else {
-                Toast.makeText(this,
-                    "Vamos prosseguir com o seu perfil!",
-                    Toast.LENGTH_LONG).show()
+                val signupIntent = Intent(this, SignUpActivity::class.java)
+                signupIntent.putExtra(IDADE_EXTRA, idade)
+                startActivity(signupIntent)
+
             }
-            // muda o texto escrito no botão
-            avancar_button.text = "Apertou"
         }
     }
 
