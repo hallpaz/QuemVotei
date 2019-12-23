@@ -33,13 +33,13 @@ class ProfileActivity : AppCompatActivity() {
     }
 
     fun configurarListeners(){
-        discar_button.setOnClickListener {
-            val intent = Intent(Intent.ACTION_DIAL).apply {
-                data = Uri.parse("tel:$08006480005")
-            }
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            }
-        }
+//        discar_button.setOnClickListener {
+//            val intent = Intent(Intent.ACTION_DIAL).apply {
+//                data = Uri.parse("tel:$08006480005")
+//            }
+//            if (intent.resolveActivity(packageManager) != null) {
+//                startActivity(intent)
+//            }
+//        }
     }
 }
