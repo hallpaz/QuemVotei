@@ -21,4 +21,7 @@
     <string name="pergunta_de_teste">Pergunta de teste?</string>
     <string name="resposta_de_teste">resposta de teste</string>
     <string name="titulo_faq">Perguntas Frequentes</string>
+    <string name="perfil_string">Perfil</string>
+    <string name="eleicoes_string">Eleições</string>
+    <string name="faq_string">FAQ</string>
 </resources>

@@ -23,7 +23,7 @@ class SignUpActivity : AppCompatActivity() {
             val nome = nome_edittext.text.toString()
             val cidade = cidade_edittext.text.toString()
 
-            val profileIntent = Intent(this, ProfileActivity::class.java)
+            val profileIntent = Intent(this, HomeActivity::class.java)
             profileIntent.putExtra(NOME_EXTRA, nome)
             profileIntent.putExtra(CIDADE_EXTRA, cidade)
             profileIntent.putExtra(IDADE_EXTRA, intent.getStringExtra(IDADE_EXTRA))

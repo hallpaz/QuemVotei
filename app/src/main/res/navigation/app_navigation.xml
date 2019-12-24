@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_navigation"
+    app:startDestination="@id/eleicoes_dest">
+
+    <fragment
+        android:id="@+id/eleicoes_dest"
+        android:name="br.edu.infnet.quemvotei.fragmentos.EleicoesFragment"
+        android:label="fragment_eleicoes"
+        tools:layout="@layout/fragment_eleicoes" />
+    <fragment
+        android:id="@+id/faq_dest"
+        android:name="br.edu.infnet.quemvotei.fragmentos.FAQFragment"
+        android:label="fragment_faq"
+        tools:layout="@layout/fragment_faq" />
+    <fragment
+        android:id="@+id/perfil_dest"
+        android:name="br.edu.infnet.quemvotei.fragmentos.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
+</navigation>
