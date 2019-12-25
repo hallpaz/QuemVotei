@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cadastro_navigation"
+    app:startDestination="@id/nascimento_form_dest">
+
+    <fragment
+        android:id="@+id/nascimento_form_dest"
+        android:name="br.edu.infnet.quemvotei.NascimentoFormFragment"
+        android:label="fragment_nascimento_form"
+        tools:layout="@layout/fragment_nascimento_form" />
+    <fragment
+        android:id="@+id/nome_form_dest"
+        android:name="br.edu.infnet.quemvotei.NomeFormFragment"
+        android:label="fragment_nome_form"
+        tools:layout="@layout/fragment_nome_form" />
+</navigation>
