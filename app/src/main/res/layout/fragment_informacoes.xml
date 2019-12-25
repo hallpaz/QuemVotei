@@ -14,8 +14,10 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
-        android:text="TextView"
+        android:text="0"
+        app:layout_constraintBottom_toTopOf="@+id/vlocal_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
         app:layout_constraintTop_toBottomOf="@+id/vnome_textview" />
 
@@ -24,11 +26,16 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/vidade_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/pnome_textview" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/vsecao_textview"
@@ -37,10 +44,14 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/vzona_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vzona_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/vzona_textview"
@@ -50,9 +61,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/vsecao_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/vtitulo_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vtitulo_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/vtitulo_textview"
@@ -62,9 +76,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/vzona_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/vlocal_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vlocal_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/vlocal_textview"
@@ -74,9 +91,12 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/vtitulo_textview"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        app:layout_constraintTop_toBottomOf="@+id/vidade_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vidade_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/pnome_textview"
@@ -84,10 +104,10 @@
         android:layout_height="wrap_content"
         android:text="Nome"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pidade_textview"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintTop_toTopOf="@+id/vnome_textview"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/pidade_textview"
@@ -96,9 +116,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/hint_idade"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/plocal_textview"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/pnome_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vnome_textview" />
 
     <TextView
         android:id="@+id/plocal_textview"
@@ -107,9 +126,9 @@
         android:layout_marginTop="8dp"
         android:text="Domicílio eleitoral"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ptitulo_textview"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/pidade_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vidade_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/ptitulo_textview"
@@ -118,9 +137,9 @@
         android:layout_marginTop="8dp"
         android:text="Título eleitoral"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/pzona_textview"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/plocal_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vlocal_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/pzona_textview"
@@ -129,21 +148,20 @@
         android:layout_marginTop="8dp"
         android:text="Zona eleitoral"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/psecao_textview"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/ptitulo_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vtitulo_textview"
+        tools:visibility="gone" />
 
     <TextView
         android:id="@+id/psecao_textview"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
         android:text="Seção eleitoral"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:layout_constraintTop_toBottomOf="@+id/pzona_textview" />
+        app:layout_constraintTop_toBottomOf="@+id/vzona_textview"
+        tools:visibility="gone" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
