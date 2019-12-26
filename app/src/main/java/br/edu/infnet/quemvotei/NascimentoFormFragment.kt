@@ -26,6 +26,10 @@ class NascimentoFormFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // A referência para o ViewModel deve ser a Activity
+        // e não este fragmento. Precisaremos de uma referência
+        // comum para podermos compartilhar a mesma instância
+        // de ViewModel
         activity?.let {act->
             cadastroViewModel = ViewModelProviders.of(act)
                 .get(CadastroViewModel::class.java)
@@ -35,10 +39,10 @@ class NascimentoFormFragment : Fragment() {
 
     private fun setUpListeners(){
         avancar_button.setOnClickListener {
-            cadastroViewModel.idade.value = "16"
+            // modifica o valor da variável "nascimento" no ViewModel
+            cadastroViewModel.nascimento = nascimento_edittext.text.toString()
+            // Solicita navegação para o próximo fragmento
             findNavController().navigate(R.id.nome_form_dest)
         }
     }
-
-
 }

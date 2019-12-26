@@ -10,5 +10,12 @@ class CadastroViewModel: ViewModel() {
     val zona = MutableLiveData<String>().apply { value = "" }
     val secao = MutableLiveData<String>().apply { value = "" }
     val local = MutableLiveData<String>().apply { value = "" }
-    val nascimento: String? = null
+    var nascimento: String = ""
+    set(value) {
+        //podemos validar o valor se quisermos
+        val data = textoPraData(value)
+        idade.value = dataPraIdade(data).toString()
+        // atribui o novo valor à variável
+        field = value
+    }
 }

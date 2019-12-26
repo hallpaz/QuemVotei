@@ -1,19 +1,19 @@
 package br.edu.infnet.quemvotei
 
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
-import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_nome_form.*
+import kotlinx.android.synthetic.main.activity_sign_up.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class NomeFormFragment : Fragment() {
+class LocalFormFragment : Fragment() {
 
     private lateinit var cadastroViewModel: CadastroViewModel
     override fun onCreateView(
@@ -21,8 +21,9 @@ class NomeFormFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nome_form, container, false)
+        return inflater.inflate(R.layout.fragment_local_form, container, false)
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -34,11 +35,19 @@ class NomeFormFragment : Fragment() {
     }
 
     private fun setUpListeners(){
-        avancar_button.setOnClickListener {
-            cadastroViewModel.nome.value = nome_edittext.text.toString()
-            findNavController().navigate(R.id.local_form_dest)
-        }
+        // recuperar valores do ViewModel
+        // caso sejam nulos, string vazia como valor padrão
+        val nome = cadastroViewModel.nome.value ?: ""
+        val idade = cadastroViewModel.idade.value ?: ""
+        val local = cadastroViewModel.local.value ?: ""
+        
+        //Intent para iniciar HomeActivity
+        val homeIntent = Intent(activity, HomeActivity::class.java)
+        // adicionando dados informados
+        homeIntent.putExtra(NOME_EXTRA, nome)
+        homeIntent.putExtra(IDADE_EXTRA, idade)
+        homeIntent.putExtra(CIDADE_EXTRA, local)
+        startActivity(homeIntent)
     }
-
 
 }

@@ -11,6 +11,11 @@
         android:label="fragment_nascimento_form"
         tools:layout="@layout/fragment_nascimento_form" />
     <fragment
+        android:id="@+id/local_form_dest"
+        android:name="br.edu.infnet.quemvotei.LocalFormFragment"
+        android:label="fragment_local_form"
+        tools:layout="@layout/fragment_local_form" />
+    <fragment
         android:id="@+id/nome_form_dest"
         android:name="br.edu.infnet.quemvotei.NomeFormFragment"
         android:label="fragment_nome_form"

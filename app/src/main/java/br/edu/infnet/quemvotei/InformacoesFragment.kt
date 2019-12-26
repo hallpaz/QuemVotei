@@ -26,10 +26,13 @@ class InformacoesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // Activity como referência do ViewModel para
+        // compartilhamento da mesma instância
         activity?.let {act->
             cadastroViewModel = ViewModelProviders.of(act)
                 .get(CadastroViewModel::class.java)
         }
+        // Inicia a observação de "LiveDatas"
         subscribe()
     }
 
@@ -38,6 +41,7 @@ class InformacoesFragment : Fragment() {
             if(it != null && it.isNotBlank()){
                 pnome_textview.visibility = View.VISIBLE
                 vnome_textview.visibility = View.VISIBLE
+                vnome_textview.text = it
             } else {
                 pnome_textview.visibility = View.GONE
                 vnome_textview.visibility = View.GONE
@@ -45,10 +49,14 @@ class InformacoesFragment : Fragment() {
         })
 
         cadastroViewModel.idade.observe(this, Observer {
+            // Se o valor não for nulo, nem vazio ou espaços
             if(it != null && it.isNotBlank()){
+                // torna as Views visíveis
                 pidade_textview.visibility = View.VISIBLE
                 vidade_textview.visibility = View.VISIBLE
-            } else {
+                // exibe o valor observado de idade
+                vidade_textview.text = it
+            } else { // caso contrário, esconde as Views
                 pidade_textview.visibility = View.GONE
                 vidade_textview.visibility = View.GONE
             }
@@ -95,6 +103,4 @@ class InformacoesFragment : Fragment() {
         })
 
     }
-
-
 }
