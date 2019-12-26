@@ -39,6 +39,4 @@ class NomeFormFragment : Fragment() {
             findNavController().navigate(R.id.local_form_dest)
         }
     }
-
-
 }

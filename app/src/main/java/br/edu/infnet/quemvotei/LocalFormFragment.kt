@@ -40,7 +40,7 @@ class LocalFormFragment : Fragment() {
         val nome = cadastroViewModel.nome.value ?: ""
         val idade = cadastroViewModel.idade.value ?: ""
         val local = cadastroViewModel.local.value ?: ""
-        
+
         //Intent para iniciar HomeActivity
         val homeIntent = Intent(activity, HomeActivity::class.java)
         // adicionando dados informados
