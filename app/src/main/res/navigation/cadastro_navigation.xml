@@ -7,17 +7,17 @@
 
     <fragment
         android:id="@+id/nascimento_form_dest"
-        android:name="br.edu.infnet.quemvotei.NascimentoFormFragment"
+        android:name="br.edu.infnet.quemvotei.auth.NascimentoFormFragment"
         android:label="fragment_nascimento_form"
         tools:layout="@layout/fragment_nascimento_form" />
     <fragment
         android:id="@+id/local_form_dest"
-        android:name="br.edu.infnet.quemvotei.LocalFormFragment"
+        android:name="br.edu.infnet.quemvotei.auth.LocalFormFragment"
         android:label="fragment_local_form"
         tools:layout="@layout/fragment_local_form" />
     <fragment
         android:id="@+id/nome_form_dest"
-        android:name="br.edu.infnet.quemvotei.NomeFormFragment"
+        android:name="br.edu.infnet.quemvotei.auth.NomeFormFragment"
         android:label="fragment_nome_form"
         tools:layout="@layout/fragment_nome_form" />
 </navigation>

@@ -1,4 +1,4 @@
-package br.edu.infnet.quemvotei
+package br.edu.infnet.quemvotei.auth
 
 
 import android.os.Bundle
@@ -8,12 +8,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_nome_form.*
+import br.edu.infnet.quemvotei.R
+import kotlinx.android.synthetic.main.fragment_nascimento_form.*
 
 /**
  * A simple [Fragment] subclass.
  */
-class NomeFormFragment : Fragment() {
+class NascimentoFormFragment : Fragment() {
 
     private lateinit var cadastroViewModel: CadastroViewModel
     override fun onCreateView(
@@ -21,11 +22,15 @@ class NomeFormFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nome_form, container, false)
+        return inflater.inflate(R.layout.fragment_nascimento_form, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        // A referência para o ViewModel deve ser a Activity
+        // e não este fragmento. Precisaremos de uma referência
+        // comum para podermos compartilhar a mesma instância
+        // de ViewModel
         activity?.let {act->
             cadastroViewModel = ViewModelProviders.of(act)
                 .get(CadastroViewModel::class.java)
@@ -35,8 +40,10 @@ class NomeFormFragment : Fragment() {
 
     private fun setUpListeners(){
         avancar_button.setOnClickListener {
-            cadastroViewModel.nome.value = nome_edittext.text.toString()
-            findNavController().navigate(R.id.local_form_dest)
+            // modifica o valor da variável "nascimento" no ViewModel
+            cadastroViewModel.nascimento = nascimento_edittext.text.toString()
+            // Solicita navegação para o próximo fragmento
+            findNavController().navigate(R.id.nome_form_dest)
         }
     }
 }

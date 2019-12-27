@@ -1,4 +1,4 @@
-package br.edu.infnet.quemvotei
+package br.edu.infnet.quemvotei.auth
 
 
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import br.edu.infnet.quemvotei.R
 import kotlinx.android.synthetic.main.fragment_informacoes.*
 
 /**

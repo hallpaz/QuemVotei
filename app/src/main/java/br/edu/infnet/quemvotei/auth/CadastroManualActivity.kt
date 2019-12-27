@@ -1,7 +1,8 @@
-package br.edu.infnet.quemvotei
+package br.edu.infnet.quemvotei.auth
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import br.edu.infnet.quemvotei.R
 
 class CadastroManualActivity : AppCompatActivity() {
 

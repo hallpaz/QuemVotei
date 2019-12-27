@@ -1,7 +1,9 @@
-package br.edu.infnet.quemvotei
+package br.edu.infnet.quemvotei.auth
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import br.edu.infnet.quemvotei.dataPraIdade
+import br.edu.infnet.quemvotei.textoPraData
 
 class CadastroViewModel: ViewModel() {
     val nome = MutableLiveData<String>().apply { value = "" }
