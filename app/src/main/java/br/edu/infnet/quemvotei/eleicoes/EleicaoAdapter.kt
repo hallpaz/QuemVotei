@@ -8,10 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import br.edu.infnet.quemvotei.R
 
 
-class EleicaoAdapter: RecyclerView.Adapter<EleicaoAdapter.EleicaoViewholder>() {
-
-    // lista com alguns dados de exemplo
-    val listaDeEleicoes = listOf("2018", "2016", "2014")
+class EleicaoAdapter(var listaDeEleicoes:List<String> = listOf())
+        : RecyclerView.Adapter<EleicaoAdapter.EleicaoViewholder>() {
 
     // quantos itens serão exibidos na RecyclerView
     override fun getItemCount() = listaDeEleicoes.size
@@ -33,6 +31,13 @@ class EleicaoAdapter: RecyclerView.Adapter<EleicaoAdapter.EleicaoViewholder>() {
         // configura o ano a partir do elemento
         // na posição correspondente da lista
         holder.anoTextView.text = listaDeEleicoes[position]
+    }
+
+    fun mudarDados(eleicoes: List<String>){
+        // Modifica a lista de dados
+        listaDeEleicoes = eleicoes
+        // Solicita que a RecyclerView seja redesenhada
+        notifyDataSetChanged()
     }
 
     class EleicaoViewholder(itemView: View):

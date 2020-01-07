@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/eleicoes_dest"
-        android:name="br.edu.infnet.quemvotei.fragmentos.EleicoesFragment"
+        android:name="br.edu.infnet.quemvotei.eleicoes.EleicoesFragment"
         android:label="fragment_eleicoes"
         tools:layout="@layout/fragment_eleicoes" />
     <fragment
