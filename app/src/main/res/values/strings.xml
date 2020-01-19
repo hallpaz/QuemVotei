@@ -25,4 +25,5 @@
     <string name="eleicoes_string">Eleições</string>
     <string name="faq_string">FAQ</string>
     <string name="ano_zero_placeholder">0000</string>
+    <string name="tipo_string">tipo</string>
 </resources>

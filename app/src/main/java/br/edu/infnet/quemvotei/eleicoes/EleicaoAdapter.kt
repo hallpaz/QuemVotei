@@ -6,9 +6,10 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.edu.infnet.quemvotei.R
+import br.edu.infnet.quemvotei.eleicoes.modelos.Eleicao
 
 
-class EleicaoAdapter(var listaDeEleicoes:List<String> = listOf())
+class EleicaoAdapter(var listaDeEleicoes:List<Eleicao> = listOf())
         : RecyclerView.Adapter<EleicaoAdapter.EleicaoViewholder>() {
 
     // quantos itens serão exibidos na RecyclerView
@@ -28,12 +29,15 @@ class EleicaoAdapter(var listaDeEleicoes:List<String> = listOf())
     // Pode ser executado muitas vezes,
     // sempre que for necessário reconfigurar dados
     override fun onBindViewHolder(holder: EleicaoViewholder, position: Int) {
+        val eleicaoCorrente = listaDeEleicoes[position]
         // configura o ano a partir do elemento
         // na posição correspondente da lista
-        holder.anoTextView.text = listaDeEleicoes[position]
+        holder.anoTextView.text = eleicaoCorrente.ano.toString()
+        // configura o tipo na TextView apropriada
+        holder.tipoTextView.text = eleicaoCorrente.tipo
     }
 
-    fun mudarDados(eleicoes: List<String>){
+    fun mudarDados(eleicoes: List<Eleicao>){
         // Modifica a lista de dados
         listaDeEleicoes = eleicoes
         // Solicita que a RecyclerView seja redesenhada
@@ -42,8 +46,9 @@ class EleicaoAdapter(var listaDeEleicoes:List<String> = listOf())
 
     class EleicaoViewholder(itemView: View):
         RecyclerView.ViewHolder(itemView){
-        // Referência para a TextView que será
-        // configurada com um ano da lista
+        // Referência para as Views que serão
+        // configuradas com dados da lista
         val anoTextView: TextView = itemView.findViewById(R.id.ano_textview)
+        val tipoTextView: TextView = itemView.findViewById(R.id.tipo_textview)
     }
 }

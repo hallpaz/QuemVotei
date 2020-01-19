@@ -5,3 +5,4 @@ const val CIDADE_EXTRA = "cidade"
 const val IDADE_EXTRA = "idade"
 
 const val ANO_EXTRA = "ano"
+const val TIPO_EXTRA = "tipo"

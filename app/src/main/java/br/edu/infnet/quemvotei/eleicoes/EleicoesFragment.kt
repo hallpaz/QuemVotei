@@ -15,6 +15,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.edu.infnet.quemvotei.ANO_EXTRA
 
 import br.edu.infnet.quemvotei.R
+import br.edu.infnet.quemvotei.TIPO_EXTRA
+import br.edu.infnet.quemvotei.eleicoes.modelos.Eleicao
 import kotlinx.android.synthetic.main.fragment_eleicoes.*
 
 /**
@@ -63,9 +65,15 @@ class EleicoesFragment : Fragment() {
                 data?.let {
                     // lista já existente ou lista vazia
                     val lista = eleicaoViewModel.eleicoes.value ?: listOf()
+                    val ano = it.getStringExtra(ANO_EXTRA)?.toInt() ?: 0
+                    val tipo = it.getStringExtra(TIPO_EXTRA) ?: ""
+                    val eleicao = Eleicao(
+                        ano,
+                        tipo
+                    )
                     // concatena novo elemento à lista
                     eleicaoViewModel.eleicoes.value =
-                        lista + data.getStringExtra(ANO_EXTRA)
+                        lista + eleicao
                 }
             }
         }
